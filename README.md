@@ -88,15 +88,15 @@ class HomeViewModel @Inject constructor(
 🧮 Matchmaking Logic
 
 ┌──────────────────────────────┬────────────┬────────────────────────────────────┐
-│ Factor                       │ Weight (%) │ Why It's Used                       │
+│ Factor                       │ Weight (%) │ Why It's Used                      │
 ├──────────────────────────────┼────────────┼────────────────────────────────────┤
-│ Opposite Gender              │    25%     │ Basic compatibility                 │
-│ Age Difference ≤ 8 years     │    20%     │ Ideal gap for matching              │
-│ Same Country                 │    15%     │ Cultural alignment                  │
-│ Same State                   │    10%     │ Regional relevance                  │
-│ Same Location                │    10%     │ Proximity helps                     │
-│ Wage Compatibility           │    10%     │ Socioeconomic match                 │
-│ Misc (future params)         │    10%     │ Extendability                       │
+│ Opposite Gender              │    25%     │ Basic compatibility                │
+│ Age Difference ≤ 8 years     │    20%     │ Ideal gap for matching             │
+│ Same Country                 │    15%     │ Cultural alignment                 │
+│ Same State                   │    10%     │ Regional relevance                 │
+│ Same Location                │    10%     │ Proximity helps                    │
+│ Wage Compatibility           │    10%     │ Socioeconomic match                │
+│ Misc (future params)         │    10%     │ Extendability                      │
 └──────────────────────────────┴────────────┴────────────────────────────────────┘
 
 🚀 Getting Started
