@@ -79,8 +79,8 @@ Used for injecting ViewModels, UseCases, Repositories, etc.
 
 ```kotlin
 @HiltViewModel
-class MatchViewModel @Inject constructor(
-    private val getMatchesUseCase: GetMatchesUseCase
+class HomeViewModel @Inject constructor(
+    private val randomUserUseCase: RandomUserUseCase
 ) : ViewModel() {
     // ...
 }
