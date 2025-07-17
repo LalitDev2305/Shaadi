@@ -8,6 +8,7 @@ A modern Android matchmaking app built using clean architecture and a modular de
 
 This is a **multi-module project** organized like this:
 
+<pre>
 shaadi
 ├── app/                   # Main Android launcher module (DI setup, navigation)
 │   ├── data/
@@ -20,6 +21,8 @@ shaadi
 │   ├── domain/
 ├── database/              # Room database setup
 ├── network/               # Ktor HTTP client setup
+```
+</pre>
 
 ---
 
@@ -83,7 +86,7 @@ class MatchViewModel @Inject constructor(
 }
 
 🧮 Matchmaking Logic
-<pre>
+
 ┌──────────────────────────────┬────────────┬────────────────────────────────────┐
 │ Factor                       │ Weight (%) │ Why It's Used                       │
 ├──────────────────────────────┼────────────┼────────────────────────────────────┤
@@ -95,7 +98,6 @@ class MatchViewModel @Inject constructor(
 │ Wage Compatibility           │    10%     │ Socioeconomic match                 │
 │ Misc (future params)         │    10%     │ Extendability                       │
 └──────────────────────────────┴────────────┴────────────────────────────────────┘
-</pre>
 
 🚀 Getting Started
 
@@ -104,5 +106,4 @@ class MatchViewModel @Inject constructor(
 	3.	Run on emulator or device
 
 ✍️ Author
-
 Built with ❤️ by Lalit Naiya
