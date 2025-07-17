@@ -30,9 +30,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -44,7 +42,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.assignment.domain.models.RandomResult
-import kotlin.math.roundToInt
 
 @Composable
 fun UserCard(
@@ -53,11 +50,11 @@ fun UserCard(
     val localUser = remember {
         UserLocalTuple(
             gender = "Male",
-            city = "Lumsden",
-            state = "Ontario",
-            country = "Canada",
+            city = "Mumbai",
+            state = "Maharashtra",
+            country = "India",
             age = 36, // Close to one of them
-            nat = "CA"
+            nat = "IND"
         )
     }
 
@@ -250,17 +247,13 @@ fun ShimmerLoadingBox(
 }
 
 fun calculateMatchPercentage(local: UserLocalTuple, remote: RandomResult): Int {
-    var score = 0f
+    var score = 5f
 
     if (!remote.gender.equals(local.gender, ignoreCase = true)) {
-        score += 25
+        score += 30
     }
 
     if (kotlin.math.abs(remote.dob.age - local.age) <= 8) {
-        score += 20
-    }
-
-    if (remote.location.country.equals(local.country, ignoreCase = true)) {
         score += 20
     }
 
@@ -268,11 +261,15 @@ fun calculateMatchPercentage(local: UserLocalTuple, remote: RandomResult): Int {
             local.city, ignoreCase = true
         )
     ) {
+        score += 15
+    }
+
+    if (remote.location.country.equals(local.country, ignoreCase = true)) {
         score += 10
     }
 
     if (remote.nat.equals(local.nat, ignoreCase = true)) {
-        score += 10
+        score += 5
     }
 
     return score.toInt().coerceAtMost(99)
